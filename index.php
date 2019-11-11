@@ -164,7 +164,8 @@
 
           <!-- Conteúdo do Modal 1-->
           <div class="mt-2 pt-4 pl-4 pr-4" id="campoModal" style="display:none; margin:3%; color: white; height:80%; background-color:darkGray;">
-            <?php include "conteudo.php"; ?>
+            <!-- <?php include "conteudo.php"; ?> -->
+            header("location:conteudo.php");
           </div>
       </div>
 
