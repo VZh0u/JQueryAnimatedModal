@@ -11,7 +11,7 @@
       <script src="js/jquery.min.js"></script>
       <script src="js/animatedModal.js"></script>
 
-      <script type="text/javascript">
+      <script>
         window.onload = function(){
           document.getElementById("fechar").style =
            "display: block; margin-left:90%; background: white; color: black; margin-top:1%;";
@@ -74,14 +74,16 @@
             <div id="modal-02">
               <div  id="btn-close-modal" class="close-modal-02">
                 <!-- BOTÃO DE FECHAR MODAL -->
-                <a id="fechar02" class="btn button" style="display:none;">Fechar</a>
+                <button id="fechar02" class="btn button" style="display:none;">Fechar</button>
               </div>
 
               <div id="campoModal02" class="modal-content mt-2 pt-4 pr-4" style="display: none;color: white;">
                 <!-- Conteúdo do modal 02 -->
+                <p>
                   <div class="col-lg-offset-3 text-left pl-5" style="color:black;">
                     Conteúdo do seu modal aqui
                   </div>
+                </p>
               </div>
               <script>
 
