@@ -1,0 +1,115 @@
+<!doctype html>
+    <html class="no-js" lang="">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>JS - Animated Modal</title>
+      <link rel="stylesheet" href="css/normalize.min.css">
+      <link rel="stylesheet" href="css/animate.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/animatedModal.js"></script>
+
+      <script>
+        window.onload = function(){
+          document.getElementById("fechar").style =
+           "display: block; margin-left:90%; background: white; color: black; margin-top:1%;";
+          document.getElementById("fechar02").style =
+           "display: block; margin-left:90%; background: white; color: black; margin-top:1%;";
+
+          var corpo = document.getElementById('corpo');
+          var demo02 = document.getElementById('demo02');
+          var campoModal02 = document.getElementById('campoModal02');
+          var fechar02 = document.getElementById('fechar02');
+
+          demo02.onclick = function(){
+            corpo.style = 'background-color: rgba(50, 65, 100, 90);';
+            campoModal02.style.display = 'block';
+          }
+
+          fechar02.onclick = function(){
+            corpo.style.backgroundColor = 'white';
+          }
+        }
+      </script>
+
+      <style>
+        /* Botao de Fechar */
+        #btn-close-modal {
+          width:100%;
+          text-align: center;
+          cursor:pointer;
+          color:#fff;
+          padding-top: 1%;
+          padding-right: 10%;
+        }
+      </style>
+
+      </head>
+
+        <body id="corpo" style="background-color:white">
+
+          <!-- Chamando o modal -->
+          <button type="button" name="button" id="demo01" href="#animatedModal" class="btn btn-secondary"
+           onClick="document.all.campoModal.style.display='block'"> Modal </button>
+          <button type="button" name="button" id="demo02" href="#modal-02" class="btn"
+           style="background-color: darkBlue;color: white;"> Como fazer? </button>
+
+          <!--DEMO01-->
+            <div id="animatedModal">
+              <div  id="btn-close-modal" class="close-animatedModal">
+                <button id="fechar" class="btn button" style="display:none;">Fechar</button>
+              </div>
+
+              <!-- Conteúdo do Modal 1-->
+              <div class="mt-2 pt-4 pl-4 pr-4" id="campoModal"
+               style="display:none; margin:3%; color: white; height:80%; background-color:darkGray;">
+                <p style="text-align:center;">Título do Conteúdo do seu Animated Modal
+                <p>Conteúdo do seu Animated Modal!</p>
+              </div>
+            </div>
+
+            <!--Modal 02-->
+            <div id="modal-02">
+              <div  id="btn-close-modal" class="close-modal-02">
+                <!-- BOTÃO DE FECHAR MODAL -->
+                <button id="fechar02" class="btn button" style="display:none;">Fechar</button>
+              </div>
+
+              <div id="campoModal02" class="modal-content mt-2 pt-4 pr-4" style="display: none;color: white;">
+                <!-- Conteúdo do modal 02 -->
+                <p>
+                  <div class="col-lg-offset-3 text-left pl-5" style="color:black;">
+                    Conteúdo do seu modal aqui
+                  </div>
+                </p>
+              </div>
+              <script>
+
+                //Configurando o modal 1 por meio do ID demo01
+                $("#demo01").animatedModal({
+                  color:'gray',
+                  width:'60%',
+                  height:'60%',
+                  left: '20%',
+                  top: '10%',
+                  animationDuration: '.60s',
+
+                });
+
+                //Configurando o modal 2 por meio do ID demo02
+                $("#demo02").animatedModal({
+                    animatedIn:'lightSpeedIn',
+                    animatedOut:'bounceOutDown',
+                    color:'darkBlue',
+                    width:'60%',
+                    height:'60%',
+                    left: '20%',
+                    top: '10%',
+                    animationDuration: '.2s',
+                });
+              </script>
+
+        </body>
+    </html>
