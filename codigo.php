@@ -1,4 +1,3 @@
-<br><p class="lead" style="margin-left:15%">Segue abaixo o código dos exemplos utilizados neste tutorial:</p><br>
 <div class="" style="margin-bottom: 10%;margin-left:15%; margin-right: 20%; border:5%; border:solid black; border-width:.1em .1em .1em .8em;padding:.2em .6em;">
   <code style="color:black;">
     <pre style='color:#000000;background:#ffffff; padding-left:2%;' id="tabela"><span style='color:#004a43; '>
