@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
+
+    <title>JS - Animated Modal</title>
+
+
+    <!-- /*Links que precisa para fazer o animated modal -->
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/animatedModal.js"></script>
+    <!-- */ -->
+
+    <!-- <script src="js/jquery-3.3.1.js"></script> -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilo próprio desse site -->
+    <link href="css/customizado.css" rel="stylesheet">
+
+    <script>
+    window.onload = function(){
+      document.getElementById("fechar").style = "display: block; margin-left:90%; background: white; color: black; margin-top:1%;";
+      document.getElementById("fechar02").style = "display: block; margin-left:90%; background: white; color: black; margin-top:1%;";
+
+      var corpo = document.getElementById('corpo');
+      var demo02 = document.getElementById('demo02');
+      var campoModal02 = document.getElementById('campoModal02');
+      var fechar02 = document.getElementById('fechar02');
+      var conteudoTabela = document.getElementById('conteudoT');
+      var navbar = document.getElementById('navbar');
+
+      demo02.onclick = function(){
+        navbar.style = 'background-color: rgba(50, 65, 100, 90);';
+        navbar.style = 'color: rgba(50, 65, 100, 90);';
+        corpo.style = 'background-color: rgba(50, 65, 100, 90);';
+        campoModal02.style.display = 'block';
+      }
+      fechar02.onclick = function(){
+        navbar.style.backgroundColor = 'black';
+        navbar.style.color = 'white';
+        corpo.style.backgroundColor = 'white';
+      }
+    }
+    </script>
+
+    <style>
+    /* Botao de Fechar */
+        #btn-close-modal {
+            width:100%;
+            text-align: center;
+            cursor:pointer;
+            color:#fff;
+            padding-top: 1%;
+            padding-right: 10%;
+        }
+        #btn-close-modal02 {
+            width:100%;
+            text-align: center;
+            cursor:pointer;
+            color:#fff;
+            padding-top: 1%;
+            padding-right: 10%;
+        }
+        .demo01{
+          margin-left: 45.5%;
+          margin-top: 10%;
+        }
+        #demo02{
+          color: white;
+          background-color: darkBlue;
+          margin-top: 10%;
+        }
+      </style>
+
+  </head>
+
+  <body id="corpo" style="background-color:white">
+
+    <header>
+      <!-- Menu Fixo -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background:black" id="navbar">
+        <a class="navbar-brand" href="index.html">JqueryAnimatedModal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#corpo">Início<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#ComoFazer">Como Fazer<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#codigo">Código dos Exemplos<span class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li> -->
+            <!-- <div class="dropdown">
+              <button style="color:white;" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div> -->
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+
+    <!-- Conteúdo do seu tutorial -->
+    <div role="main" class="container">
+      <h1 class="mt-5">Como utilizar o JQuery Animated Modal?</h1>
+      <p class="lead">O animatedModal.js é um plugin jQuery para criar um modal de tela cheia com transições CSS3.
+        <br>Você pode criar suas próprias transições ou usar as transições do animate.css.<br>
+        <br>Este tutorial, irá lhe ensinar a como utilizar duas dessas transições: <br>
+        <br>
+        <ul>
+          <li class="lead">
+          <p>
+          <b>
+            Exemplo 1:
+          </b>
+        </p>
+          <p style="padding-left:5%;">
+            Ao abrir: 'zoom in';
+          </p>
+          <p style="padding-left:5%;">
+            Ao fechar: 'bounceOut';
+          </p>
+          <a id="ComoFazer" href="#animatedModal" class="btn btn-primary demo01"
+          onClick="document.all.campoModal.style.display='block'" style="margin-left: 10%;margin-top:3%;margin-bottom:3%;">
+          Exemplo 1 - Modal Animado </a>
+        </li>
+        </ul>
+        <ul>
+
+          <li class="lead">
+            <p>
+            <b>
+              Exemplo 2:
+            </b>
+          </p>
+            <p style="padding-left:5%;">
+              Ao abrir: 'lightSpeedIn';
+            </p>
+            <p style="padding-left:5%;">
+              Ao fechar: 'bounceOutDown';
+            </p>
+            <a id="demo02" href="#modal-02" class="btn"
+            style="margin-left: 10%;margin-top:3%;margin-bottom:3%;"> Como fazer? </a>
+          </li>
+        </ul>
+
+      <!-- Chamando o modal -->
+
+      <!--DEMO01-->
+      <div id="animatedModal">
+          <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+          <div  id="btn-close-modal" class="close-animatedModal">
+              <button id="fechar" type="button" class="btn button" style="display:none;">Fechar</button>
+          </div>
+
+          <!-- Conteúdo do Modal 1-->
+          <div class="mt-2 pt-4 pl-4 pr-4" id="campoModal" style="display:none; margin:3%; color: white; height:80%; background-color:darkGray;">
+            <!-- <?php include "conteudo.php"; ?> -->
+            <iframe src="conteudo.html" name="content" width="820" height="260" align="top" scrolling="no" frameborder="0" hspace="0" vspace="0" allowtransparency="true"> </iframe>
+          </div>
+      </div>
+
+      <!--DEMO02-->
+      <div id="modal-02">
+          <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
+          <div  id="btn-close-modal02" class="close-modal-02">
+            <!-- CLOSE MODAL -->
+            <button id="fechar02" type="button" class="btn button" style="display:none;">Fechar</button>
+          </div>
+
+          <div id="campoModal02" class="modal-content mt-2 pt-4 pr-4" style="display: none; margin-left:0%; margin-right:0%;background:white;">
+              <div class="col-lg-offset-3 text-left pl-5" style="color:black; background:white;">
+                <a style=""><code style="color:#b800e6; font-size: 120%;">Passo 1 - </code>Faça o download do arquivo .zip das extensões do Animated Modal <img class="pl-3" src="https://icon-icons.com/icons2/933/PNG/32/forward-right-arrow-button_icon-icons.com_72748.png" alt=""> </a>
+                <a style="font-size:100%" href="https://github.com/joaopereirawd/animatedModal.js/archive/master.zip" class="pl-3 btn btn-success">BAIXAR VERSÃO 1.0</a><br><br>
+                <a><code style="color:#b800e6; font-size: 120%;">Passo 2 - </code>Descompacte o arquivo .zip, retire o arquivo "css" e o arquivo "js"
+                  do arquivo animatedModal.js e coloque-os na mesma pasta do seu projeto,
+                  chame as extensões abaixo:</a><br><br>
+                  <code style="color:black;">
+                    <pre style='color:#000000;background:#ffffff; border:solid black; border-width:.15em .15em .15em .15em;padding:.2em .6em; margin-left: 0.5%; margin-right: 0.5%;'>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>link</span><span style='color:#274796; '> </span><span style='color:#074726; '>rel</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"stylesheet"</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"css/normalize.min.css"</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>link</span><span style='color:#274796; '> </span><span style='color:#074726; '>rel</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"stylesheet"</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"css/animate.min.css"</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>link</span><span style='color:#274796; '> </span><span style='color:#074726; '>rel</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"stylesheet"</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"js/jquery.min.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"js/animatedModal.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></pre>
+                  </code>
+                  <a><code style="color:#b800e6; font-size: 120%;">Passo 3 - </code>No <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>body</span><span style='color:#a65700; '>&gt;</span> crie um <span style='color:blue; '>id</span><span style='color:#808030; '>=</span><span style='color:green; '>"</span><span style='color:green; '>corpo</span><span style='color:green; '>"</span> e dois botões para chamar os modais:</a><br><br>
+
+                  <code style="color:black;">
+                    <pre style='color:#000000;background:#ffffff; border:solid black; border-width:.15em .15em .15em .15em;padding:.2em .6em; margin-left: 0.5%; margin-right: 0.5%;'>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>button</span> type<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>button</span><span style='color:#800000; '>"</span> name<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>button</span><span style='color:#800000; '>"</span> id<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>demo01</span><span style='color:#800000; '>"</span> href<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>#animatedModal</span><span style='color:#800000; '>"</span> class<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>btn btn-secondary</span><span style='color:#800000; '>"</span>
+             onClick<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '><span style='color:#800000; font-weight:bold; '>document</span>.all.campoModal.style.display='block'</span><span style='color:#800000; '>"</span><span style='color:#a65700; '>></span> Modal <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>button</span><span style='color:#a65700; '>></span>
+
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>button</span> type<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>button</span><span style='color:#800000; '>"</span> name<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>button</span><span style='color:#800000; '>"</span> id<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>demo02</span><span style='color:#800000; '>"</span> href<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>#modal-02</span><span style='color:#800000; '>"</span> class<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>btn</span><span style='color:#800000; '>"</span>
+             style<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>background-color: darkBlue;color: white;</span><span style='color:#800000; '>"</span><span style='color:#a65700; '>></span> Como fazer? <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>button</span><span style='color:#a65700; '>></span></pre>
+                  </code>
+
+                  <a><code style="color:#b800e6; font-size: 120%;">Passo 4 - </code>Crie a <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span> do conteúdo do modal e a <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span> dos botões de fechar.</a><br><br>
+
+                  <code style="color:black;">
+                    <pre style='font-size: 100%;color:#000000;background:#ffffff; border:solid black; border-width:.15em .15em .15em .15em;padding:.2em .6em;margin-left: 0.5%; margin-right: 0.5%;'><span style='color:#696969; '>&lt;!--Modal 01--></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"animatedModal"</span><span style='color:#a65700; '>></span>
+              <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '>  </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"btn-close-modal"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"close-animatedModal"</span><span style='color:#a65700; '>></span>
+                <span style='color:#696969; '>&lt;!-- BOTÃO DE FECHAR MODAL --></span>
+                <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>button</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"fechar"</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"btn button"</span><span style='color:#274796; '> </span><span style='color:#074726; '>style</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>none</span><span style='color:#800080; '>;</span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>></span>Fechar<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>button</span><span style='color:#a65700; '>></span>
+              <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
+
+              <span style='color:#696969; '>&lt;!-- Conteúdo do Modal 01--></span>
+              <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"mt-2 pt-4 pl-4 pr-4"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"campoModal"</span><span style='color:#274796; '> </span>
+              <span style='color:#074726; '>style</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>none</span><span style='color:#800080; '>;</span><span style='color:#274796; '> </span><span style='color:#bb7977; font-weight:bold; '>margin</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>3</span><span style='color:#006600; '>%</span><span style='color:#800080; '>;</span><span style='color:#274796; '> </span><span style='color:#bb7977; font-weight:bold; '>color</span><span style='color:#808030; '>:</span><span style='color:#274796; '> </span><span style='color:#797997; '>white</span><span style='color:#800080; '>;</span><span style='color:#274796; '> </span><span style='color:#bb7977; font-weight:bold; '>height</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>80</span><span style='color:#006600; '>%</span><span style='color:#800080; '>;</span><span style='color:#274796; '> </span><span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span><span style='color:#797997; '>darkGray</span><span style='color:#800080; '>;</span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>></span>
+                <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>p</span><span style='color:#274796; '> </span><span style='color:#074726; '>style</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#bb7977; font-weight:bold; '>text-align</span><span style='color:#808030; '>:</span><span style='color:#074726; '>center</span><span style='color:#800080; '>;</span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>></span>Título do Conteúdo do seu Animated Modal
+                <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>p</span><span style='color:#a65700; '>></span>Conteúdo do seu Animated Modal!<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>p</span><span style='color:#a65700; '>></span>
+              <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
+
+            <span style='color:#696969; '>&lt;!--Modal 02--></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"modal-02"</span><span style='color:#a65700; '>></span>
+              <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '>  </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"btn-close-modal"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"close-modal-02"</span><span style='color:#a65700; '>></span>
+                <span style='color:#696969; '>&lt;!-- BOTÃO DE FECHAR MODAL --></span>
+                <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>button</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"fechar02"</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"btn button"</span><span style='color:#274796; '> </span><span style='color:#074726; '>style</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>none</span><span style='color:#800080; '>;</span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>></span>Fechar<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>button</span><span style='color:#a65700; '>></span>
+              <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
+
+              <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"campoModal02"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"modal-content mt-2 pt-4 pr-4"</span><span style='color:#274796; '> </span><span style='color:#074726; '>style</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#274796; '> </span><span style='color:#074726; '>none</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>color</span><span style='color:#808030; '>:</span><span style='color:#274796; '> </span><span style='color:#797997; '>white</span><span style='color:#800080; '>;</span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>></span>
+                <span style='color:#696969; '>&lt;!-- Conteúdo do modal 02 --></span>
+                <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>p</span><span style='color:#a65700; '>></span>
+                  <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"col-lg-offset-3 text-left pl-5"</span><span style='color:#274796; '> </span><span style='color:#074726; '>style</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#bb7977; font-weight:bold; '>color</span><span style='color:#808030; '>:</span><span style='color:#797997; '>black</span><span style='color:#800080; '>;</span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>></span>
+                    Conteúdo do seu modal aqui
+                  <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
+                <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>p</span><span style='color:#a65700; '>></span>
+              <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span></pre>
+                  </code>
+                  <a><code style="color:#b800e6; font-size: 120%;">Passo 5 - </code>No <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>body</span><span style='color:#a65700; '>&gt;</span> crie dois botões para chamar os modais:</a><br><br>
+
+                  <code style="color:black;">
+                    <pre style='font-size: 100%;color:#000000;background:#ffffff; border:solid black; border-width:.1em .1em .1em .1em;padding:.2em .6em;margin-left: 0.5%; margin-right: 0.5%;'><pre style='color:#000000;background:#ffffff;'>
+            &lt;<span style='color:#800000; font-weight:bold; '>script</span>>
+
+            //Configurando o modal <span style='color:#008c00; '>1</span> por meio do ID demo01
+            <span style='color:#0000e6; '>$</span>(<span style='color:#008c00; '>"#demo01"</span>).<span style='color:blue; '>animatedModal</span>({
+              color:<span style='color:#008c00; '>'gray'</span>,
+              width:<span style='color:#008c00; '>'60%'</span>,
+              height:<span style='color:#008c00; '>'60%'</span>,
+              left: <span style='color:#008c00; '>'20%'</span>,
+              top: <span style='color:#008c00; '>'10%'</span>,
+              animationDuration: <span style='color:#008c00; '>'.60s'</span>,
+            }<span style='color:#808030; '>)</span>;
+
+            //Configurando o modal <span style='color:#008c00; '>2</span> por meio do ID demo02
+            <span style='color:#0000e6; '>$</span>(<span style='color:#008c00; '>"#demo02"</span>).<span style='color:blue; '>animatedModal</span>({
+              animatedIn:<span style='color:#008c00; '>'lightSpeedIn'</span>,
+              animatedOut:<span style='color:#008c00; '>'bounceOutDown'</span>,
+              color:<span style='color:#008c00; '>'darkBlue'</span>,
+              width:<span style='color:#008c00; '>'60%'</span>,
+              height:<span style='color:#008c00; '>'60%'</span>,
+              left: <span style='color:#008c00; '>'20%'</span>,
+              top: <span style='color:#008c00; '>'10%'</span>,
+              animationDuration: <span style='color:#008c00; '>'.2s'</span>,
+            });
+
+            &lt;/<span style='color:#800000; font-weight:bold; '>script</span>></pre></pre></code>
+
+            <a><code style="color:#b800e6; font-size: 120%;">Passo 6 - </code>Crie um script para fazer com que, ao clicar no botão 2, o campoModal02 apareça e o <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>body</span><span style='color:#a65700; '>&gt;</span> mude de cor para melhor visualização do seu modal. Por fim, com a tag <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>style</span><span style='color:#a65700; '>&gt;</span> centralize os botões:</a><br><br>
+
+            <code style="color:black;">
+              <pre style='font-size: 100%;color:#000000;background:#ffffff; border:solid black; border-width:.1em .1em .1em .1em;padding:.2em .6em;margin-left: 0.5%; margin-right: 0.5%;'><pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span> type<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>text/javascript</span><span style='color:#800000; '>"</span><span style='color:#808030; '>></span>
+            <span style='color:#800000; font-weight:bold; '>window</span><span style='color:#808030; '>.</span><span style='color:#0000e6;; font-weight:bold; '>onload</span> <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '><span style='color:purple; font-weight:bold; '>function</span></span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+              <span style='color:#800000; font-weight:bold; '><span style='color:#800000; font-weight:bold; '>document</span></span><span style='color:#808030; '>.</span><span style='color:#0000e6;; font-weight:bold; '>getElementByID</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>fechar</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>
+               style <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>display: block; margin-left:90%; background: white; color: black; margin-top:1%;</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+              <span style='color:#800000; font-weight:bold; '><span style='color:#800000; font-weight:bold; '>document</span></span><span style='color:#808030; '>.</span><span style='color:#0000e6;; font-weight:bold; '>getElementByID</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>fechar02</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>
+               style <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>display: block; margin-left:90%; background: white; color: black; margin-top:1%;</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+
+              <span style='color:#800000; font-weight:bold; '>var</span> corpo <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>document</span><span style='color:#808030; '>.</span><span style='color:#0000e6;; font-weight:bold; '>getElementByID</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>corpo</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+              <span style='color:#800000; font-weight:bold; '>var</span> demo02 <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>document</span><span style='color:#808030; '>.</span><span style='color:#0000e6;; font-weight:bold; '>getElementByID</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>demo02</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+              <span style='color:#800000; font-weight:bold; '>var</span> campoModal02 <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>document</span><span style='color:#808030; '>.</span><span style='color:#0000e6;; font-weight:bold; '>getElementByID</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>campoModal02</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+              <span style='color:#800000; font-weight:bold; '>var</span> fechar02 <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>document</span><span style='color:#808030; '>.</span><span style='color:#0000e6;; font-weight:bold; '>getElementByID</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>fechar02</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+              <span style='color:#800000; font-weight:bold; '>demo02</span><span style='color:#808030; '>.</span><span style='color:blue; font-weight:bold; '>onclick</span> <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '><span style='color:purple; font-weight:bold; '>function</span></span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                <span style='color:#800000; font-weight:bold; '>corpo.style</span> <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>background-color: rgba(50, 65, 100, 90);</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span>
+                <span style='color:#800000; font-weight:bold; '>campoModal02.style.display</span> <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>block</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span>
+              <span style='color:#800080; '>}</span>
+              <span style='color:#800000; font-weight:bold; '>fechar02</span><span style='color:#808030; '>.</span><span style='color:blue; font-weight:bold; '>onclick</span> <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '><span style='color:purple; font-weight:bold; '>function</span></span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                <span style='color:#800000; font-weight:bold; '>corpo.style.backgroundColor</span> <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>white</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span>
+              <span style='color:#800080; '>}</span>
+            <span style='color:#800080; '>}</span>
+            <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#808030; '>></span>
+
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>style</span><span style='color:#808030; '>></span>
+
+            <span style='color:#696969; '>/* Centralizar os botões */</span>
+            <span style='color:blue; font-weight:bold; '>#demo01</span><span style='color:#800080; '>{</span>
+              margin<span style='color:#808030; '>-</span>left<span style='color:#800080; '>:</span> <span style='color:#008000; '>45.5</span><span style='color:#808030; '>%</span><span style='color:#800080; '>;</span>
+              margin<span style='color:#808030; '>-</span>top<span style='color:#800080; '>:</span> <span style='color:#008c00; '>10</span><span style='color:#808030; '>%</span><span style='color:#800080; '>;</span>
+            <span style='color:#800080; '>}</span>
+            <span style='color:blue; font-weight:bold; '>#demo02</span><span style='color:#800080; '>{</span>
+              color<span style='color:#800080; '>:</span> white<span style='color:#800080; '>;</span>
+              background<span style='color:#808030; '>-</span>color<span style='color:#800080; '>:</span> darkBlue<span style='color:#800080; '>;</span>
+              margin<span style='color:#808030; '>-</span>top<span style='color:#800080; '>:</span> <span style='color:#008c00; '>10</span><span style='color:#808030; '>%</span><span style='color:#800080; '>;</span>
+            <span style='color:#800080; '>}</span>
+            <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>style</span><span style='color:#808030; '>></span></pre></pre></code>
+
+
+            </div>
+
+          </div>
+    </div>
+
+      <script>
+
+          //Configurando o modal 1 por meio do ID demo01
+          $(".demo01").animatedModal({
+            color:'gray',
+            width:'60%',
+            height:'60%',
+            left: '20%',
+            top: '10%',
+            animationDuration: '.60s',
+          });
+
+          //Configurando o modal 2 por meio do ID demo02
+          $("#demo02").animatedModal({
+              animatedIn:'lightSpeedIn',
+              animatedOut:'bounceOutDown',
+              color:'darkBlue',
+              width:'60%',
+              height:'60%',
+              left: '20%',
+              top: '10%',
+              animationDuration: '.2s',
+          });
+
+      </script>
+    </div>
+    <iframe src="codigo.html" name="content" width="1500" height="1900" align="top" scrolling="no" frameborder="0" hspace="0" vspace="0" allowtransparency="true" id="codigo"> </iframe>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Desenvolvido por Vinicius de Freitas Rangel.</span>
+      </div>
+    </footer>
+
+  </body>
+</html>
